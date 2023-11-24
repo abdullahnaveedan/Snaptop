@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>{% block title %}{% endblock title %}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    {% load static %}
+    <!-- Vendor CSS Files -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyWi1W1C+Aq0EdKw8Rpq4t7jcXp5TqO1GI" crossorigin="anonymous">
+
+    <!-- Bootstrap JS and Popper.js (Order is important) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-dzFPW48T4uTlhn7xRddOW58Iv0TxuWt9g7L6UOA1xkRT8H0jGzXg07ZpvFfDHi3" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyWi1W1C+Aq0EdKw8Rpq4t7jcXp5TqO1GI" crossorigin="anonymous"></script>
+
+    {% comment %}
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet"> {% endcomment %}
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .svgs-btns{
+            margin-right:30%;
+        }
+        .location p,.chat p,.stories p,.reels p{
+            font-size:10px;
+            font-weight:900;
+            color:white;
+        }
+        .p-2{
+            padding-left:2rem !important;
+        }
+        {% block css %}{% endblock css %}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top" style="background: #37517E;  opacity: 0.7;">
+        <div class="container d-flex justify-content-end">
+
+            <h1 class="logo me-auto">
+                <a href="/">Snaptop </a>
+            </h1>
+
+            <div class="svgs-btns" style="display: inline-flex;">
+                <div class="reels p-2">
+                    <svg fill="#fff" width="30px" height="30px" viewBox="0 0 32 32" enable-background="new 0 0 32 32"
+                        version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g id="play">
+                                <g>
+                                    <path
+                                        d="M4.993,2.496C4.516,2.223,4,2.45,4,3v26c0,0.55,0.516,0.777,0.993,0.504l22.826-13.008 c0.478-0.273,0.446-0.719-0.031-0.992L4.993,2.496z">
+                                    </path>
+                                    <path
+                                        d="M4.585,30.62L4.585,30.62C3.681,30.62,3,29.923,3,29V3c0-0.923,0.681-1.62,1.585-1.62c0.309,0,0.621,0.085,0.904,0.248 l22.794,13.007c0.559,0.319,0.878,0.823,0.878,1.382c0,0.548-0.309,1.039-0.847,1.347L5.488,30.373 C5.206,30.534,4.894,30.62,4.585,30.62z M5,3.651v24.698l21.655-12.34L5,3.651z">
+                                    </path>
+                                </g>
+                            </g>
+                            <g id="stop"></g>
+                            <g id="pause"></g>
+                            <g id="replay"></g>
+                            <g id="next"></g>
+                            <g id="Layer_8"></g>
+                            <g id="search"></g>
+                            <g id="list"></g>
+                            <g id="love"></g>
+                            <g id="menu"></g>
+                            <g id="add"></g>
+                            <g id="headset"></g>
+                            <g id="random"></g>
+                            <g id="music"></g>
+                            <g id="setting"></g>
+                            <g id="Layer_17"></g>
+                            <g id="Layer_18"></g>
+                            <g id="Layer_19"></g>
+                            <g id="Layer_20"></g>
+                            <g id="Layer_21"></g>
+                            <g id="Layer_22"></g>
+                            <g id="Layer_23"></g>
+                            <g id="Layer_24"></g>
+                            <g id="Layer_25"></g>
+                            <g id="Layer_26"></g>
+                        </g>
+                    </svg>
+                    <p>Reels</p>
+                </div>
+                <div class="location  p-2">
+                    <svg width="30px" height="30px" viewBox="-4 0 32 32" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#fff">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>location</title>
+                            <desc>Created with Sketch Beta.</desc>
+                            <defs> </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                sketch:type="MSPage">
+                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                    transform="translate(-106.000000, -413.000000)" fill="#fff">
+                                    <path
+                                        d="M118,422 C116.343,422 115,423.343 115,425 C115,426.657 116.343,428 118,428 C119.657,428 121,426.657 121,425 C121,423.343 119.657,422 118,422 L118,422 Z M118,430 C115.239,430 113,427.762 113,425 C113,422.238 115.239,420 118,420 C120.761,420 123,422.238 123,425 C123,427.762 120.761,430 118,430 L118,430 Z M118,413 C111.373,413 106,418.373 106,425 C106,430.018 116.005,445.011 118,445 C119.964,445.011 130,429.95 130,425 C130,418.373 124.627,413 118,413 L118,413 Z"
+                                        id="location" sketch:type="MSShapeGroup"> </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Maps</p>
+                </div>
+                <div class="chat p-2">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M22 10.787c0 4.854-4.253 8.788-9.5 8.788a10.22 10.22 0 0 1-2.684-.355c-1.881 1.241-4.233 1.617-5.485 1.73-.286.027-.434-.347-.24-.559.595-.65 1.431-1.803 1.715-3.368C4.073 15.43 3 13.225 3 10.787 3 5.934 7.253 2 12.5 2S22 5.934 22 10.787z"
+                                fill="#fff"></path>
+                        </g>
+                    </svg>
+                    <p>Chat</p>
+                </div>
+                <div class="stories p-2">
+                    <svg width="30px" height="30px" viewBox="0 0 24.00 24.00" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" transform="rotate(0)" stroke="#fff"
+                        stroke-width="0.00024000000000000003">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d=""></path>
+                            <path
+                                d="M7.5 17C6.56538 17 6.09808 17 5.75 16.799C5.52197 16.6674 5.33261 16.478 5.20096 16.25C5 15.9019 5 15.4346 5 14.5L5 5.5C5 4.56538 5 4.09808 5.20096 3.75C5.33261 3.52197 5.52197 3.33261 5.75 3.20096C6.09808 3 6.56538 3 7.5 3C8.43462 3 8.90192 3 9.25 3.20096C9.47803 3.33261 9.66739 3.52197 9.79904 3.75C10 4.09808 10 4.56538 10 5.5V14.5C10 15.4346 10 15.9019 9.79904 16.25C9.66739 16.478 9.47803 16.6674 9.25 16.799C8.90192 17 8.43462 17 7.5 17Z"
+                                fill="#fff"></path>
+                            <path
+                                d="M16.5 17C15.5654 17 15.0981 17 14.75 16.799C14.522 16.6674 14.3326 16.478 14.201 16.25C14 15.9019 14 15.4346 14 14.5V8.5C14 7.56538 14 7.09808 14.201 6.75C14.3326 6.52197 14.522 6.33261 14.75 6.20096C15.0981 6 15.5654 6 16.5 6C17.4346 6 17.9019 6 18.25 6.20096C18.478 6.33261 18.6674 6.52197 18.799 6.75C19 7.09808 19 7.56538 19 8.5V14.5C19 15.4346 19 15.9019 18.799 16.25C18.6674 16.478 18.478 16.6674 18.25 16.799C17.9019 17 17.4346 17 16.5 17Z"
+                                fill="#fff"></path>
+                        </g>
+                    </svg>
+                    <p>Stories</p>
+                </div>
+            </div>
+        
+            <!-- <svg fill="#fff" width="30px" height="30px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="play"></g> <g id="stop"></g> <g id="pause"></g> <g id="replay"></g> <g id="next"></g> <g id="Layer_8"></g> <g id="search"></g> <g id="list"></g> <g id="love"></g> <g id="menu"></g> <g id="add"> <g> <g> <path d="M4.743,2.496C4.266,2.223,4,2.45,4,3v26c0,0.55,0.266,0.776,0.743,0.504l22.701-13.008 c0.478-0.273,0.509-0.719,0.031-0.992L4.743,2.496z"></path> <path d="M4.385,30.619L4.385,30.619C3.718,30.619,3,30.112,3,29V3c0-1.113,0.718-1.62,1.385-1.62c0.28,0,0.567,0.083,0.854,0.248 l22.733,13.008c0.538,0.308,0.846,0.798,0.846,1.347c0,0.559-0.32,1.063-0.878,1.382L5.24,30.371 C4.952,30.536,4.665,30.619,4.385,30.619z M5.003,3.797L5,28.203l21.314-12.212L5.003,3.797z"></path> </g> <g> <line x1="28" x2="20" y1="26" y2="26"></line> <path d="M28,27h-8c-0.552,0-1-0.447-1-1s0.448-1,1-1h8c0.552,0,1,0.447,1,1S28.552,27,28,27z"></path> </g> <g> <line x1="24" x2="24" y1="22" y2="30"></line> <path d="M24,31c-0.552,0-1-0.447-1-1v-8c0-0.553,0.448-1,1-1s1,0.447,1,1v8C25,30.553,24.552,31,24,31z"></path> </g> </g> </g> <g id="headset"></g> <g id="random"></g> <g id="music"></g> <g id="setting"></g> <g id="Layer_17"></g> <g id="Layer_18"></g> <g id="Layer_19"></g> <g id="Layer_20"></g> <g id="Layer_21"></g> <g id="Layer_22"></g> <g id="Layer_23"></g> <g id="Layer_24"></g> <g id="Layer_25"></g> <g id="Layer_26"></g> </g></svg> -->
+
+            <nav id="navbar" class="navbar">
+                {% comment %} <ul>
+                    {% if user.is_authenticated %}
+                        <li><p>{{request.user.username}}</p></li>
+                    {% else %}
+                        <li><a class="getstarted scrollto" href="/signin">Get Started</a></li>
+                    {% endif %}
+
+                </ul> {% endcomment %}
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+                
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    {% block body %} {% endblock body %}
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between">
+
+                    <div class="footer-contact">
+                        <h3>Snaptop</h3>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Jangobytes</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+                Designed by <a href="https://bootstrapmade.com/">Jangobytes Innovations</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+           $('[data-toggle="dropdown"]').dropdown();
+        });
+     </script>
+     
+
+</body>
+
+</html>
