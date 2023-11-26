@@ -11,3 +11,12 @@ class profile(models.Model):
     def __str__(self):
         return f"{self.username}"
     
+class reelsupload(models.Model):
+    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(default="", max_length=50)
+    discription = models.CharField(default="", max_length=5000)
+    reels = models.ImageField( upload_to="videodata/" , default = "")
+
+    def __str__(self):
+        return f"{self.username}"
+    
