@@ -15,4 +15,7 @@ urlpatterns = [
     path("logoutuser", views.logoutuser, name="logoutuser"),
     path("saveprofile", views.saveprofile , name = "saveprofile"),
     path("editprofile", views.editprofile, name = "editprofile"),
+    path("chat", views.chat,  name="chat"), 
+    path("chat/", views.chatbox, name="chatbox")
+
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

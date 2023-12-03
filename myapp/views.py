@@ -20,8 +20,6 @@ def index(request):
         param = {
             'image': profile_obj.profilepic
         }
-    else:
-        print("NO login detect")
     return render(request , "index.html", param)
 
 def signin(request):
@@ -31,7 +29,9 @@ def signinform(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
+        # print(username,password)
         user = authenticate(request,username = username,password = password)
+        print(user)
         if user is not None:
             auth_login(request, user)
             return redirect("index")
@@ -65,8 +65,6 @@ def logoutuser(request):
     if request.user.is_authenticated:
         auth_logout(request)
         return redirect("index")
-    else:
-        print("no account login")
     return redirect("index")
 
 def saveprofile(request):
@@ -141,25 +139,61 @@ def editprofile(request):
 
         if request.method == "POST":
             user = User.objects.get(username = request.user)
+            profiledata = profile.objects.get(username = request.user)
 
             # Update the user fields
             user.first_name = request.POST.get("first_name")
             user.last_name = request.POST.get("last_name")
            
-            # user.save()
+            user.save()
 
-            location = request.POST.get("location")
-            bio = request.POST.get("bio")
+            profiledata.location = request.POST.get("location")
+            profiledata.bio = request.POST.get("bio")
             image_file = request.FILES.get('displaypic', None)
             image = ''
             if image_file:
                 file_name = default_storage.save('profilepic/' + image_file.name, ContentFile(image_file.read()))
-                image = file_name
-                userprofile = profile(username = user, bio = bio, profilepic = image, location = location)
-                # userprofile.save()
+                profiledata.profilepic = file_name
+                profiledata.save()
             else:
-                userprofile = profile(username = user, bio = bio, location = location)
-                # userprofile.save()  
+                profiledata.save()  
             return redirect("myprofile")
             
     return render(request, "editprofile.html", param)
+
+def chat(request):
+    if request.user.is_authenticated:
+        user = User.objects.get(username=request.user.username)
+        profile_obj = profile.objects.get(username=user)
+
+        users_info = User.objects.exclude(username=request.user.username)
+        users_pic = profile.objects.exclude(username=request.user)
+        
+        users_data = zip(users_info, users_pic)
+
+        param = {
+            'image': profile_obj.profilepic,
+            'users_data' : users_data
+        }
+
+    return render(request, "chatapp.html", param)
+
+def chatbox(request):
+    if request.user.is_authenticated:
+        user = User.objects.get(username=request.user.username)
+
+        myuser =User.objects.get(username = request.GET.get('username'))
+        
+        profile_obj = profile.objects.get(username=user)
+
+        users_info = User.objects.exclude(username=request.user.username)
+        users_pic = profile.objects.exclude(username=request.user)
+        
+        users_data = zip(users_info, users_pic)
+
+        param = {
+            'image': profile_obj.profilepic,
+            'users_data' : users_data,
+            'myuser':myuser
+        }
+    return render(request, "message_box.html",param)

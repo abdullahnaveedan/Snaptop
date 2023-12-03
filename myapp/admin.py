@@ -4,3 +4,4 @@ from .models import *
 
 admin.site.register(profile)
 admin.site.register(reelsupload)
+admin.site.register(chatapp)
